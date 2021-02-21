@@ -12,12 +12,10 @@ function writePassword() {
 
 // Write function to get criteria and generate password
  var generatePassword = function() {
-   promptLength();
- }
 
- // prompt for length
- var promptLength = function() {
-  var passwordLength = prompt("Enter the desired length of your password. (Must be between 8 and 128 characters)");
+  var newPassword = "";
+   // prompt for length
+   var passwordLength = prompt("Enter the desired length of your password. (Must be between 8 and 128 characters)");
 
    // make sure entered value is a number between 8 and 128
    if (isNaN(passwordLength)) {
@@ -31,12 +29,11 @@ function writePassword() {
    else {
      parseInt(passwordLength);
    }
- }
 
- // prompt for special characters
- var promptCharacters = function() {
+   // prompt for special characters
    var characters = "";
 
+   // add characters desired to characters variable based on user response
    var charLower = confirm("Would you like to use lowercase letters?");
 
    if (charLower) {
@@ -60,6 +57,11 @@ function writePassword() {
    if (charSpecial) {
      characters += "!@#$%&*_"
    }
+
+   for (var i = 0; i < passwordLength; i++) {
+     newPassword += characters.charAt(Math.floor(Math.random() * characters.length + 1));
+   } 
+   return newPassword;
  }
 
 // Add event listener to generate button
