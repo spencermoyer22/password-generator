@@ -34,28 +34,33 @@ function writePassword() {
    var characters = "";
 
    // add characters desired to characters variable based on user response
-   var charLower = confirm("Would you like to use lowercase letters?");
+   var charLower = confirm("Would you like lowercase letters added to the random generator?");
 
    if (charLower) {
      characters += "abcdefghijklmnopqrstuvwxyz";
    }
 
-   var charUpper = confirm("Would you like to use uppercase letters?");
+   var charUpper = confirm("Would you like uppercase letters added to the random generator?");
   
    if (charUpper) {
      characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
    }
 
-   var charNumber = confirm("Would you like to use numbers?");
+   var charNumber = confirm("Would you like numbers added to the random generator?");
 
    if (charNumber) {
      characters += "1234567890";
    }
 
-   var charSpecial = confirm("Would you like to use secial characters?")
+   var charSpecial = confirm("Would you like special characters added to the random generator?")
 
    if (charSpecial) {
      characters += "!@#$%&*_"
+   }
+
+   if (!charLower && !charUpper && !charNumber && !charSpecial) {
+     alert("You must include at least one character type.");
+     generatePassword();
    }
 
    for (var i = 0; i < passwordLength; i++) {
