@@ -8,11 +8,11 @@ This application uses JavaScript to get user input for password criteria and cre
 * JavaScript
 
 ## Screenshot
-![Password Generator]()
+![Password Generator](develop/password-generator.png)
 > This screenshot shows the password generator. Just click the button and you will be walked through the prompts to generate a random password.
 
 ## Website
-
+https://spencermoyer22.github.io/password-generator/
 
 ## Contribution
 Made by Spencer Moyer
